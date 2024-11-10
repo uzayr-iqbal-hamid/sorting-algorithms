@@ -8,9 +8,12 @@ public class cyclicSort {
     }
 
     static void cycleSort(int[] arr){
-        for (int i = 0; i<arr.length; i++) {
-            while (arr[i] != i + 1) {
+        int i = 0;
+        while (i < arr.length) {
+            if (arr[i] == arr[i] - 1) {
                 swap(arr, i, arr[i] - 1);
+            } else {
+                i++;
             }
         }
     }
